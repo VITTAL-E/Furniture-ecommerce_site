@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Review your shopping cart items. Free shipping on orders over $500. Secure checkout at Luxe Living.">
+  <title>Shopping Cart | Luxe Living</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪑</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-couch"></i></span><span>Luxe
+          Living</span></a>
+      <nav class="nav-main" role="navigation"><a href="index.html" class="nav-link">Home</a><a href="shop.html"
+          class="nav-link">Shop</a><a href="blog.html" class="nav-link">Blog</a><a href="contact.html"
+          class="nav-link">Contact</a></nav>
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle RTL layout" aria-pressed="false" title="Switch to RTL"><i
+            class="fas fa-globe"></i></button>
+        <a href="cart.html" class="header-action-btn active" aria-label="Cart"><i class="fas fa-shopping-bag"></i><span
+            class="count cart-count" style="display:none">0</span></a>
+        <a href="login.html" class="header-action-btn" aria-label="Account"><i class="far fa-user"></i></a>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-overlay"></div>
+
+  <main id="main-content">
+    <section class="page-header">
+      <div class="container">
+        <h1>Shopping Cart</h1>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><span class="breadcrumb-item"><a
+              href="index.html">Home</a></span><span class="breadcrumb-separator"><i
+              class="fas fa-chevron-right"></i></span><span class="breadcrumb-item active">Cart</span></nav>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Empty State -->
+        <div class="empty-state" id="cart-empty" style="display:none;">
+          <div class="empty-state-icon"><i class="fas fa-shopping-cart"></i></div>
+          <h3>Your Cart is Empty</h3>
+          <p>Looks like you haven't added anything to your cart yet. Explore our collection and find something you love!
+          </p>
+          <a href="shop.html" class="btn btn-accent btn-lg"><i class="fas fa-shopping-bag"></i> Continue Shopping</a>
+        </div>
+
+        <!-- Cart Content -->
+        <div class="cart-layout" id="cart-content">
+          <div>
+            <table class="cart-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="cart-items">
+                <!-- Rendered dynamically by Cart.renderCartPage() -->
+              </tbody>
+            </table>
+
+            <div class="flex justify-between items-center mt-5 flex-wrap gap-3">
+              <a href="shop.html" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+              <button class="btn btn-outline" onclick="Cart.clear(); Cart.renderCartPage();">
+                <i class="fas fa-trash"></i> Clear Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div class="order-row"><span>Subtotal</span><span id="summary-subtotal">$0.00</span></div>
+            <div class="order-row"><span>Shipping</span><span id="summary-shipping">$0.00</span></div>
+            <div class="order-row"><span>Tax (8%)</span><span id="summary-tax">$0.00</span></div>
+
+            <div class="coupon-form">
+              <input type="text" placeholder="Coupon Code" class="form-control" aria-label="Coupon code">
+              <button class="btn btn-outline btn-sm">Apply</button>
+            </div>
+
+            <div class="order-total"><span>Total</span><span id="summary-total">$0.00</span></div>
+
+            <a href="checkout.html" class="btn btn-accent btn-lg" style="width:100%;margin-top:var(--space-5);">
+              <i class="fas fa-lock"></i> Proceed to Checkout
+            </a>
+
+            <div class="text-center mt-4">
+              <div class="flex justify-center gap-3" style="font-size:var(--text-xl);color:var(--text-light);">
+                <i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i class="fab fa-cc-paypal"></i><i
+                  class="fab fa-cc-stripe"></i>
+              </div>
+              <p class="text-xs text-muted mt-2"><i class="fas fa-shield-alt"></i> Secure 256-bit SSL Encryption</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2024 Luxe Living. All rights reserved.</p>
+        <div class="footer-payment"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i
+            class="fab fa-cc-paypal"></i><i class="fab fa-cc-stripe"></i></div>
+      </div>
+    </div>
+  </footer>
+  <div id="toast-container" class="toast-container"></div>
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse our premium furniture collection. Filter by category, price, and rating. Modern sofas, beds, tables, and office furniture.">
+  <title>Shop | Luxe Living</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪑</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-couch"></i></span><span>Luxe Living</span></a>
+      <nav class="nav-main" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown"><a href="shop.html" class="nav-link nav-dropdown-toggle active">Shop</a>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html" class="nav-dropdown-item"><i class="fas fa-couch"></i> Living Room</a>
+            <a href="shop.html" class="nav-dropdown-item"><i class="fas fa-bed"></i> Bedroom</a>
+            <a href="shop.html" class="nav-dropdown-item"><i class="fas fa-utensils"></i> Dining</a>
+            <a href="shop.html" class="nav-dropdown-item"><i class="fas fa-briefcase"></i> Office</a>
+          </div>
+        </div>
+        <a href="shop.html" class="nav-link">Deals</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle RTL layout" aria-pressed="false" title="Switch to RTL"><i class="fas fa-globe"></i></button>
+        <a href="cart.html" class="header-action-btn" aria-label="Cart"><i class="fas fa-shopping-bag"></i><span class="count cart-count" style="display:none">0</span></a>
+        <a href="login.html" class="header-action-btn" aria-label="Account"><i class="far fa-user"></i></a>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-overlay"></div>
+
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Our Collection</h1>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+          <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+          <span class="breadcrumb-item active">Shop</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Shop Content -->
+    <section class="section">
+      <div class="container">
+        <div class="shop-layout">
+          <!-- Filter Sidebar -->
+          <aside class="filter-sidebar" aria-label="Product filters">
+            <div class="filter-group">
+              <h3 class="filter-title">Categories</h3>
+              <div class="flex flex-col gap-2">
+                <label class="form-check"><input type="checkbox" checked data-filter-category="all"> <span class="form-check-label">All Products</span></label>
+                <label class="form-check"><input type="checkbox" data-filter-category="living-room"> <span class="form-check-label">Living Room</span></label>
+                <label class="form-check"><input type="checkbox" data-filter-category="bedroom"> <span class="form-check-label">Bedroom</span></label>
+                <label class="form-check"><input type="checkbox" data-filter-category="dining"> <span class="form-check-label">Dining</span></label>
+                <label class="form-check"><input type="checkbox" data-filter-category="office"> <span class="form-check-label">Office</span></label>
+                <label class="form-check"><input type="checkbox" data-filter-category="outdoor"> <span class="form-check-label">Outdoor</span></label>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <h3 class="filter-title">Price Range</h3>
+              <div class="price-range">
+                <input type="range" id="price-range" min="0" max="5000" value="5000" step="50" aria-label="Max price">
+                <div class="price-range-values">
+                  <span>$0</span>
+                  <span id="price-range-value">$5,000</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <h3 class="filter-title">Rating</h3>
+              <div class="flex flex-col gap-2">
+                <label class="form-check"><input type="radio" name="rating"> <span class="form-check-label">⭐⭐⭐⭐⭐ (5)</span></label>
+                <label class="form-check"><input type="radio" name="rating"> <span class="form-check-label">⭐⭐⭐⭐ & up (4+)</span></label>
+                <label class="form-check"><input type="radio" name="rating"> <span class="form-check-label">⭐⭐⭐ & up (3+)</span></label>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <h3 class="filter-title">Material</h3>
+              <div class="flex flex-col gap-2">
+                <label class="form-check"><input type="checkbox"> <span class="form-check-label">Solid Wood</span></label>
+                <label class="form-check"><input type="checkbox"> <span class="form-check-label">Metal</span></label>
+                <label class="form-check"><input type="checkbox"> <span class="form-check-label">Fabric</span></label>
+                <label class="form-check"><input type="checkbox"> <span class="form-check-label">Leather</span></label>
+                <label class="form-check"><input type="checkbox"> <span class="form-check-label">Glass</span></label>
+                <label class="form-check"><input type="checkbox"> <span class="form-check-label">Marble</span></label>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <h3 class="filter-title">Color</h3>
+              <div class="color-swatches">
+                <button class="color-swatch" style="background:#2d2d2d" title="Black" aria-label="Black"></button>
+                <button class="color-swatch" style="background:#f5f0e8" title="White" aria-label="White"></button>
+                <button class="color-swatch" style="background:#8B4513" title="Brown" aria-label="Brown"></button>
+                <button class="color-swatch" style="background:#808080" title="Gray" aria-label="Gray"></button>
+                <button class="color-swatch" style="background:#1a3a5c" title="Navy" aria-label="Navy"></button>
+                <button class="color-swatch" style="background:#2e5c3a" title="Green" aria-label="Green"></button>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Products -->
+          <div class="shop-content">
+            <!-- Toolbar -->
+            <div class="shop-toolbar">
+              <span class="shop-result-count">Showing 12 products</span>
+              <div class="shop-sort flex items-center gap-3">
+                <div class="view-toggle">
+                  <button class="view-toggle-btn active" data-view="grid" aria-label="Grid view"><i class="fas fa-th"></i></button>
+                  <button class="view-toggle-btn" data-view="list" aria-label="List view"><i class="fas fa-list"></i></button>
+                </div>
+                <select id="product-sort" class="form-control" style="width:auto;min-height:38px;" aria-label="Sort products">
+                  <option value="default">Default Sorting</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="name-az">Name: A-Z</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="products-grid">
+              <!-- Product 1 -->
+              <div class="product-card" data-price="899" data-rating="4.8" data-category="living-room" data-name="Nordic Lounge Chair">
+                <div class="product-card-img">
+                  <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=400&fit=crop" alt="Nordic Lounge Chair" loading="lazy" width="400" height="400">
+                  <div class="product-card-badges"><span class="badge badge-accent">New</span></div>
+                  <div class="product-card-actions">
+                    <button class="product-action-btn" data-wishlist-id="prod-1" onclick="handleWishlistToggle({id:'prod-1',name:'Nordic Lounge Chair',price:899,image:'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=400&fit=crop',category:'Living Room'})"><i class="far fa-heart"></i></button>
+                    <button class="product-action-btn"><i class="far fa-eye"></i></button>
+                  </div>
+                  <div class="product-card-cart"><button class="btn" onclick="handleAddToCart({id:'prod-1',name:'Nordic Lounge Chair',price:899,image:'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=400&fit=crop'})"><i class="fas fa-shopping-cart"></i> Add to Cart</button></div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-category">Living Room</div>
+                  <h3 class="product-card-name"><a href="product.html">Nordic Lounge Chair</a></h3>
+                  <div class="rating"><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star-half-alt active"></i><span class="rating-count">(128)</span></div>
+                  <div class="product-card-price"><span class="product-price">$899.00</span></div>
+                </div>
+              </div>
+
+              <!-- Product 2 -->
+              <div class="product-card" data-price="549" data-rating="4.5" data-category="living-room" data-name="Walnut Coffee Table">
+                <div class="product-card-img">
+                  <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=400&h=400&fit=crop" alt="Walnut Coffee Table" loading="lazy" width="400" height="400">
+                  <div class="product-card-actions">
+                    <button class="product-action-btn" data-wishlist-id="prod-2" onclick="handleWishlistToggle({id:'prod-2',name:'Walnut Coffee Table',price:549,image:'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=400&h=400&fit=crop',category:'Living Room'})"><i class="far fa-heart"></i></button>
+                    <button class="product-action-btn"><i class="far fa-eye"></i></button>
+                  </div>
+                  <div class="product-card-cart"><button class="btn" onclick="handleAddToCart({id:'prod-2',name:'Walnut Coffee Table',price:549,image:'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=400&h=400&fit=crop'})"><i class="fas fa-shopping-cart"></i> Add to Cart</button></div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-category">Living Room</div>
+                  <h3 class="product-card-name"><a href="product.html">Walnut Coffee Table</a></h3>
+                  <div class="rating"><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star-half-alt active"></i><span class="rating-count">(96)</span></div>
+                  <div class="product-card-price"><span class="product-price">$549.00</span></div>
+                </div>
+              </div>
+
+              <!-- Product 3 -->
+              <div class="product-card" data-price="1299" data-rating="4.9" data-category="bedroom" data-name="King Bed Frame">
+                <div class="product-card-img">
+                  <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=400&fit=crop" alt="King Bed Frame" loading="lazy" width="400" height="400">
+                  <div class="product-card-badges"><span class="badge badge-primary">Bestseller</span></div>
+                  <div class="product-card-actions">
+                    <button class="product-action-btn" data-wishlist-id="prod-3" onclick="handleWishlistToggle({id:'prod-3',name:'King Bed Frame',price:1299,image:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=400&fit=crop',category:'Bedroom'})"><i class="far fa-heart"></i></button>
+                    <button class="product-action-btn"><i class="far fa-eye"></i></button>
+                  </div>
+                  <div class="product-card-cart"><button class="btn" onclick="handleAddToCart({id:'prod-3',name:'King Bed Frame',price:1299,image:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=400&fit=crop'})"><i class="fas fa-shopping-cart"></i> Add to Cart</button></div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-category">Bedroom</div>
+                  <h3 class="product-card-name"><a href="product.html">King Bed Frame</a></h3>
+                  <div class="rating"><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><span class="rating-count">(204)</span></div>
+                  <div class="product-card-price"><span class="product-price">$1,299.00</span></div>
+                </div>
+              </div>
+
+              <!-- Product 4 -->
+              <div class="product-card" data-price="1899" data-rating="4.7" data-category="dining" data-name="Marble Dining Table">
+                <div class="product-card-img">
+                  <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&h=400&fit=crop" alt="Marble Dining Table" loading="lazy" width="400" height="400">
+                  <div class="product-card-badges"><span class="badge badge-error" style="background:#ff4444;color:white;">-20%</span></div>
+                  <div class="product-card-actions">
+                    <button class="product-action-btn" data-wishlist-id="prod-4" onclick="handleWishlistToggle({id:'prod-4',name:'Marble Dining Table',price:1899,image:'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&h=400&fit=crop',category:'Dining'})"><i class="far fa-heart"></i></button>
+                    <button class="product-action-btn"><i class="far fa-eye"></i></button>
+                  </div>
+                  <div class="product-card-cart"><button class="btn" onclick="handleAddToCart({id:'prod-4',name:'Marble Dining Table',price:1899,image:'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&h=400&fit=crop'})"><i class="fas fa-shopping-cart"></i> Add to Cart</button></div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-category">Dining</div>
+                  <h3 class="product-card-name"><a href="product.html">Marble Dining Table</a></h3>
+                  <div class="rating"><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><span class="rating-count">(74)</span></div>
+                  <div class="product-card-price"><span class="product-price">$1,899.00</span> <span class="product-price-old">$2,399.00</span></div>
+                </div>
+              </div>
+
+              <!-- Product 5 -->
+              <div class="product-card" data-price="699" data-rating="4.6" data-category="office" data-name="Ergonomic Office Chair">
+                <div class="product-card-img">
+                  <img src="https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=400&h=400&fit=crop" alt="Ergonomic Office Chair" loading="lazy" width="400" height="400">
+                  <div class="product-card-actions">
+                    <button class="product-action-btn" data-wishlist-id="prod-5" onclick="handleWishlistToggle({id:'prod-5',name:'Ergonomic Office Chair',price:699,image:'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=400&h=400&fit=crop',category:'Office'})"><i class="far fa-heart"></i></button>
+                    <button class="product-action-btn"><i class="far fa-eye"></i></button>
+                  </div>
+                  <div class="product-card-cart"><button class="btn" onclick="handleAddToCart({id:'prod-5',name:'Ergonomic Office Chair',price:699,image:'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=400&h=400&fit=crop'})"><i class="fas fa-shopping-cart"></i> Add to Cart</button></div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-category">Office</div>
+                  <h3 class="product-card-name"><a href="product.html">Ergonomic Office Chair</a></h3>
+                  <div class="rating"><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star-half-alt active"></i><span class="rating-count">(182)</span></div>
+                  <div class="product-card-price"><span class="product-price">$699.00</span></div>
+                </div>
+              </div>
+
+              <!-- Product 6 -->
+              <div class="product-card" data-price="2499" data-rating="4.9" data-category="living-room" data-name="Velvet Sofa Set">
+                <div class="product-card-img">
+                  <img src="https://images.unsplash.com/photo-1550254478-ead40cc54513?w=400&h=400&fit=crop" alt="Velvet Sofa Set" loading="lazy" width="400" height="400">
+                  <div class="product-card-badges"><span class="badge badge-accent">Premium</span></div>
+                  <div class="product-card-actions">
+                    <button class="product-action-btn" data-wishlist-id="prod-6" onclick="handleWishlistToggle({id:'prod-6',name:'Velvet Sofa Set',price:2499,image:'https://images.unsplash.com/photo-1550254478-ead40cc54513?w=400&h=400&fit=crop',category:'Living Room'})"><i class="far fa-heart"></i></button>
+                    <button class="product-action-btn"><i class="far fa-eye"></i></button>
+                  </div>
+                  <div class="product-card-cart"><button class="btn" onclick="handleAddToCart({id:'prod-6',name:'Velvet Sofa Set',price:2499,image:'https://images.unsplash.com/photo-1550254478-ead40cc54513?w=400&h=400&fit=crop'})"><i class="fas fa-shopping-cart"></i> Add to Cart</button></div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-category">Living Room</div>
+                  <h3 class="product-card-name"><a href="product.html">Velvet Sofa Set</a></h3>
+                  <div class="rating"><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><span class="rating-count">(56)</span></div>
+                  <div class="product-card-price"><span class="product-price">$2,499.00</span></div>
+                </div>
+              </div>
+
+              <!-- Product 7 -->
+              <div class="product-card" data-price="349" data-rating="4.4" data-category="bedroom" data-name="Minimalist Nightstand">
+                <div class="product-card-img">
+                  <img src="https://images.unsplash.com/photo-1532372576444-dda954194ad0?w=400&h=400&fit=crop" alt="Minimalist Nightstand" loading="lazy" width="400" height="400">
+                  <div class="product-card-actions">
+                    <button class="product-action-btn" data-wishlist-id="prod-9" onclick="handleWishlistToggle({id:'prod-9',name:'Minimalist Nightstand',price:349,image:'https://images.unsplash.com/photo-1532372576444-dda954194ad0?w=400&h=400&fit=crop',category:'Bedroom'})"><i class="far fa-heart"></i></button>
+                    <button class="product-action-btn"><i class="far fa-eye"></i></button>
+                  </div>
+                  <div class="product-card-cart"><button class="btn" onclick="handleAddToCart({id:'prod-9',name:'Minimalist Nightstand',price:349,image:'https://images.unsplash.com/photo-1532372576444-dda954194ad0?w=400&h=400&fit=crop'})"><i class="fas fa-shopping-cart"></i> Add to Cart</button></div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-category">Bedroom</div>
+                  <h3 class="product-card-name"><a href="product.html">Minimalist Nightstand</a></h3>
+                  <div class="rating"><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="far fa-star"></i><span class="rating-count">(67)</span></div>
+                  <div class="product-card-price"><span class="product-price">$349.00</span></div>
+                </div>
+              </div>
+
+              <!-- Product 8 -->
+              <div class="product-card" data-price="1599" data-rating="4.8" data-category="dining" data-name="Oak Dining Set">
+                <div class="product-card-img">
+                  <img src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=400&h=400&fit=crop" alt="Oak Dining Set" loading="lazy" width="400" height="400">
+                  <div class="product-card-badges"><span class="badge badge-accent">Popular</span></div>
+                  <div class="product-card-actions">
+                    <button class="product-action-btn" data-wishlist-id="prod-10" onclick="handleWishlistToggle({id:'prod-10',name:'Oak Dining Set',price:1599,image:'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=400&h=400&fit=crop',category:'Dining'})"><i class="far fa-heart"></i></button>
+                    <button class="product-action-btn"><i class="far fa-eye"></i></button>
+                  </div>
+                  <div class="product-card-cart"><button class="btn" onclick="handleAddToCart({id:'prod-10',name:'Oak Dining Set',price:1599,image:'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=400&h=400&fit=crop'})"><i class="fas fa-shopping-cart"></i> Add to Cart</button></div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-category">Dining</div>
+                  <h3 class="product-card-name"><a href="product.html">Oak Dining Set</a></h3>
+                  <div class="rating"><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star-half-alt active"></i><span class="rating-count">(112)</span></div>
+                  <div class="product-card-price"><span class="product-price">$1,599.00</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <nav class="pagination" aria-label="Product pagination">
+              <button class="pagination-item disabled" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+              <button class="pagination-item active">1</button>
+              <button class="pagination-item">2</button>
+              <button class="pagination-item">3</button>
+              <button class="pagination-item">4</button>
+              <button class="pagination-item" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="footer-logo"><span class="logo-icon" style="background:var(--accent);color:var(--primary);"><i class="fas fa-couch"></i></span><span>Luxe Living</span></div><p>Premium furniture designed for modern living.</p></div>
+        <div><h4 class="footer-heading">Quick Links</h4><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="shop.html">Shop</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4 class="footer-heading">Support</h4><ul class="footer-links"><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Track Order</a></li></ul></div>
+        <div><h4 class="footer-heading">Newsletter</h4><form class="footer-newsletter-form"><input type="email" placeholder="Your email" aria-label="Email"><button type="submit"><i class="fas fa-paper-plane"></i></button></form></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2024 Luxe Living. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <div id="toast-container" class="toast-container"></div>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

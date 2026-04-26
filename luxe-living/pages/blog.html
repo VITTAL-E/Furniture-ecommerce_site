@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interior design tips, furniture guides, and home décor inspiration from the Luxe Living blog.">
+  <title>Blog | Luxe Living</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪑</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css"><link rel="stylesheet" href="../assets/css/dark-mode.css"><link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-couch"></i></span><span>Luxe Living</span></a>
+      <nav class="nav-main" role="navigation"><a href="index.html" class="nav-link">Home</a><a href="shop.html" class="nav-link">Shop</a><a href="blog.html" class="nav-link active">Blog</a><a href="contact.html" class="nav-link">Contact</a></nav>
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle RTL layout" aria-pressed="false" title="Switch to RTL"><i class="fas fa-globe"></i></button>
+        <a href="cart.html" class="header-action-btn" aria-label="Cart"><i class="fas fa-shopping-bag"></i><span class="count cart-count" style="display:none">0</span></a>
+        <a href="login.html" class="header-action-btn" aria-label="Account"><i class="far fa-user"></i></a>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-overlay"></div>
+
+  <main id="main-content">
+    <section class="page-header">
+      <div class="container"><h1>Our Blog</h1>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><span class="breadcrumb-item"><a href="index.html">Home</a></span><span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span><span class="breadcrumb-item active">Blog</span></nav>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="blog-layout">
+          <!-- Blog Content -->
+          <div class="blog-content">
+            <!-- Category Tags -->
+            <div class="flex gap-2 mb-6 flex-wrap">
+              <button class="tag active">All</button>
+              <button class="tag">Interior Design</button>
+              <button class="tag">Furniture Care</button>
+              <button class="tag">Home Décor</button>
+              <button class="tag">Trends</button>
+              <button class="tag">DIY</button>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="grid grid-2" style="gap:var(--space-6);">
+              <article class="blog-card reveal">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&h=375&fit=crop" alt="Modern living room interior design" loading="lazy" width="600" height="375">
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-card-category">Interior Design</span>
+                    <span><i class="far fa-calendar"></i> Mar 15, 2024</span>
+                    <span><i class="far fa-clock"></i> 5 min read</span>
+                  </div>
+                  <h3><a href="#">10 Tips for Designing a Modern Living Room</a></h3>
+                  <p>Transform your living space with these expert tips on color palettes, furniture placement, and lighting that create a cohesive modern aesthetic.</p>
+                  <a href="#" class="blog-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </article>
+
+              <article class="blog-card reveal">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=375&fit=crop" alt="Wooden furniture maintenance" loading="lazy" width="600" height="375">
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-card-category">Furniture Care</span>
+                    <span><i class="far fa-calendar"></i> Mar 12, 2024</span>
+                    <span><i class="far fa-clock"></i> 4 min read</span>
+                  </div>
+                  <h3><a href="#">The Complete Guide to Wood Furniture Care</a></h3>
+                  <p>Learn how to maintain and protect your wooden furniture. From daily cleaning routines to seasonal treatments that extend the life of your pieces.</p>
+                  <a href="#" class="blog-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </article>
+
+              <article class="blog-card reveal">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=375&fit=crop" alt="Small space apartment design" loading="lazy" width="600" height="375">
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-card-category">Home Décor</span>
+                    <span><i class="far fa-calendar"></i> Mar 8, 2024</span>
+                    <span><i class="far fa-clock"></i> 6 min read</span>
+                  </div>
+                  <h3><a href="#">Maximizing Small Spaces: Furniture Solutions</a></h3>
+                  <p>Discover clever furniture solutions and layout strategies that make small apartments feel spacious and organized without sacrificing style.</p>
+                  <a href="#" class="blog-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </article>
+
+              <article class="blog-card reveal">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=375&fit=crop" alt="2024 furniture design trends" loading="lazy" width="600" height="375">
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-card-category">Trends</span>
+                    <span><i class="far fa-calendar"></i> Mar 5, 2024</span>
+                    <span><i class="far fa-clock"></i> 7 min read</span>
+                  </div>
+                  <h3><a href="#">2024 Furniture Trends: What's In & What's Out</a></h3>
+                  <p>From curved silhouettes to sustainable materials, explore the hottest furniture trends shaping interiors in 2024 and beyond.</p>
+                  <a href="#" class="blog-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </article>
+
+              <article class="blog-card reveal">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&h=375&fit=crop" alt="Sustainable furniture materials" loading="lazy" width="600" height="375">
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-card-category">Interior Design</span>
+                    <span><i class="far fa-calendar"></i> Feb 28, 2024</span>
+                    <span><i class="far fa-clock"></i> 5 min read</span>
+                  </div>
+                  <h3><a href="#">Sustainable Furniture: A Buyer's Guide</a></h3>
+                  <p>Learn what makes furniture truly sustainable and how to identify eco-friendly options without compromising on quality or design.</p>
+                  <a href="#" class="blog-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </article>
+
+              <article class="blog-card reveal">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&h=375&fit=crop" alt="Home office setup" loading="lazy" width="600" height="375">
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-card-category">DIY</span>
+                    <span><i class="far fa-calendar"></i> Feb 22, 2024</span>
+                    <span><i class="far fa-clock"></i> 4 min read</span>
+                  </div>
+                  <h3><a href="#">Setting Up the Perfect Home Office</a></h3>
+                  <p>Create a productive and ergonomic home office with the right desk, chair, and lighting. Our step-by-step guide for remote workers.</p>
+                  <a href="#" class="blog-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Pagination -->
+            <nav class="pagination" aria-label="Blog pagination">
+              <button class="pagination-item disabled"><i class="fas fa-chevron-left"></i></button>
+              <button class="pagination-item active">1</button>
+              <button class="pagination-item">2</button>
+              <button class="pagination-item">3</button>
+              <button class="pagination-item"><i class="fas fa-chevron-right"></i></button>
+            </nav>
+          </div>
+
+          <!-- Blog Sidebar -->
+          <aside class="blog-sidebar" aria-label="Blog sidebar">
+            <div class="sidebar-widget">
+              <h4>Search</h4>
+              <div class="sidebar-search">
+                <input type="text" placeholder="Search articles..." aria-label="Search blog">
+                <button aria-label="Search"><i class="fas fa-search"></i></button>
+              </div>
+            </div>
+
+            <div class="sidebar-widget">
+              <h4>Categories</h4>
+              <ul class="sidebar-categories">
+                <li><a href="#">Interior Design</a> <span>12</span></li>
+                <li><a href="#">Furniture Care</a> <span>8</span></li>
+                <li><a href="#">Home Décor</a> <span>15</span></li>
+                <li><a href="#">Trends</a> <span>6</span></li>
+                <li><a href="#">DIY</a> <span>9</span></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-widget">
+              <h4>Recent Posts</h4>
+              <a href="#" class="sidebar-recent-post">
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=128&h=128&fit=crop" alt="Living room tips" loading="lazy">
+                <div><h5>10 Tips for Modern Living Room</h5><span><i class="far fa-calendar"></i> Mar 15</span></div>
+              </a>
+              <a href="#" class="sidebar-recent-post">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=128&h=128&fit=crop" alt="Wood furniture care" loading="lazy">
+                <div><h5>Wood Furniture Care Guide</h5><span><i class="far fa-calendar"></i> Mar 12</span></div>
+              </a>
+              <a href="#" class="sidebar-recent-post">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=128&h=128&fit=crop" alt="Small spaces" loading="lazy">
+                <div><h5>Maximizing Small Spaces</h5><span><i class="far fa-calendar"></i> Mar 8</span></div>
+              </a>
+            </div>
+
+            <div class="sidebar-widget" style="background:var(--primary);color:var(--secondary);text-align:center;padding:var(--space-8);">
+              <h4 style="color:var(--accent);border-bottom-color:var(--accent);">Newsletter</h4>
+              <p style="color:rgba(232,213,183,0.7);font-size:var(--text-sm);">Subscribe for weekly inspiration and design tips.</p>
+              <form class="coming-soon-form" style="flex-direction:column;max-width:100%;margin:0;">
+                <input type="email" placeholder="Your email" aria-label="Email">
+                <button type="submit" class="btn btn-accent" style="width:100%;">Subscribe</button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="footer-logo"><span class="logo-icon" style="background:var(--accent);color:var(--primary);"><i class="fas fa-couch"></i></span><span>Luxe Living</span></div><p>Premium furniture designed for modern living.</p></div>
+        <div><h4 class="footer-heading">Quick Links</h4><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="shop.html">Shop</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4 class="footer-heading">Support</h4><ul class="footer-links"><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
+        <div><h4 class="footer-heading">Newsletter</h4><form class="footer-newsletter-form"><input type="email" placeholder="Your email" aria-label="Email"><button type="submit"><i class="fas fa-paper-plane"></i></button></form></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2024 Luxe Living. All rights reserved.</p></div>
+    </div>
+  </footer>
+  <div id="toast-container" class="toast-container"></div>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

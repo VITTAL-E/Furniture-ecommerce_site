@@ -1,0 +1,11 @@
+# Luxe Living Robots.txt
+# https://luxe-living.com
+
+User-agent: *
+Allow: /
+
+# Disallow dashboard pages from indexing
+Disallow: /dashboard/
+
+# Sitemap location
+Sitemap: https://luxe-living.com/sitemap.xml

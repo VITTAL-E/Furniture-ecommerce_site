@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Luxe Living — Home 2 Creative. Discover bold, editorial furniture collections crafted for the modern visionary.">
+  <meta name="keywords" content="luxury furniture, creative home design, premium furniture, modern décor">
+  <meta name="author" content="Luxe Living">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Luxe Living | Creative Home — Premium Furniture">
+  <meta property="og:description" content="Bold editorial furniture design for the modern visionary.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪑</text></svg>">
+  <title>Luxe Living | Creative Home — Premium Furniture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <style>
+    /* ===== HOME 2 CREATIVE — Custom Styles ===== */
+    .h2-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .h2-hero-left {
+      background: #1a1a2e;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 8vw, 7rem);
+      position: relative;
+      z-index: 2;
+    }
+    .h2-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 2rem;
+    }
+    .h2-hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: #c9a84c;
+    }
+    .h2-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 5.2rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: #f5f0e8;
+      margin-bottom: 1.75rem;
+    }
+    .h2-hero-title em {
+      font-style: italic;
+      color: #c9a84c;
+    }
+    .h2-hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(245,240,232,0.65);
+      max-width: 440px;
+      margin-bottom: 2.5rem;
+    }
+    .h2-hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .h2-btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 1rem 2rem;
+      background: #c9a84c;
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .h2-btn-gold:hover { background: #e0bf6a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.35); }
+    .h2-btn-outline-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 1rem 2rem;
+      background: transparent;
+      color: #f5f0e8;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1.5px solid rgba(245,240,232,0.35);
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .h2-btn-outline-light:hover { border-color: #c9a84c; color: #c9a84c; }
+    .h2-hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(245,240,232,0.12);
+    }
+    .h2-hero-stat h4 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #c9a84c; margin-bottom: 0.25rem; }
+    .h2-hero-stat p { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.5); }
+    .h2-hero-right { position: relative; overflow: hidden; }
+    .h2-hero-right img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.88); }
+    .h2-hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(26,26,46,0.45), transparent 60%); }
+    .h2-hero-badge {
+      position: absolute; bottom: 3rem; right: 2.5rem;
+      background: #c9a84c; color: #1a1a2e;
+      padding: 1.2rem; border-radius: 50%;
+      width: 110px; height: 110px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; font-weight: 700;
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.3;
+    }
+    .h2-hero-badge span { font-size: 1.5rem; font-family: 'Playfair Display', serif; display: block; }
+
+    /* Marquee */
+    .h2-marquee-strip { background: #c9a84c; padding: 0.85rem 0; overflow: hidden; white-space: nowrap; }
+    .h2-marquee-inner { display: inline-flex; animation: h2marquee 30s linear infinite; }
+    .h2-marquee-item {
+      display: inline-flex; align-items: center; gap: 1rem; margin-right: 3rem;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #1a1a2e;
+    }
+    .h2-marquee-dot { width: 5px; height: 5px; background: #1a1a2e; border-radius: 50%; display: inline-block; }
+    @keyframes h2marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* Editorial Categories */
+    .h2-editorial { padding: 7rem 0; background: #f5f0e8; }
+    .h2-section-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #c9a84c; margin-bottom: 1rem;
+    }
+    .h2-section-label::after { content: ''; display: block; width: 30px; height: 2px; background: #c9a84c; }
+    .h2-section-heading {
+      font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 700; color: #1a1a2e; margin-bottom: 3.5rem; max-width: 480px; line-height: 1.2;
+    }
+    .h2-editorial-grid {
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr;
+      grid-template-rows: 320px 320px; gap: 16px;
+    }
+    .h2-cat-card { position: relative; overflow: hidden; border-radius: 4px; cursor: pointer; display: block; text-decoration: none; }
+    .h2-cat-card.large { grid-row: span 2; }
+    .h2-cat-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display: block; }
+    .h2-cat-card:hover img { transform: scale(1.06); }
+    .h2-cat-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,26,46,0.85) 0%, transparent 55%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 1.75rem;
+    }
+    .h2-cat-card-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #c9a84c; margin-bottom: 0.4rem; }
+    .h2-cat-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #f5f0e8; margin-bottom: 0.6rem; }
+    .h2-cat-card-link {
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(245,240,232,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s;
+    }
+    .h2-cat-card:hover .h2-cat-card-link { color: #c9a84c; }
+
+    /* Products */
+    .h2-products { padding: 7rem 0; background: #1a1a2e; }
+    .h2-products .h2-section-label,
+    .h2-products .h2-section-heading { color: #f5f0e8; }
+    .h2-products .h2-section-label::after { background: #c9a84c; }
+    .h2-products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; gap: 1rem; flex-wrap: wrap; }
+    .h2-products-scroll { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .h2-product-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px; overflow: hidden; transition: all 0.3s ease;
+    }
+    .h2-product-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-4px); border-color: rgba(201,168,76,0.35); }
+    .h2-product-img { position: relative; aspect-ratio: 1; overflow: hidden; }
+    .h2-product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
+    .h2-product-card:hover .h2-product-img img { transform: scale(1.08); }
+    .h2-product-badge {
+      position: absolute; top: 1rem; left: 1rem; background: #c9a84c; color: #1a1a2e;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 2px;
+    }
+    .h2-product-actions { position: absolute; top: 1rem; right: 1rem; display: flex; flex-direction: column; gap: 6px; opacity: 0; transition: opacity 0.3s; }
+    .h2-product-card:hover .h2-product-actions { opacity: 1; }
+    .h2-product-action-btn {
+      width: 36px; height: 36px; background: rgba(26,26,46,0.85); border: none; border-radius: 50%;
+      color: #f5f0e8; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; transition: background 0.2s;
+    }
+    .h2-product-action-btn:hover { background: #c9a84c; color: #1a1a2e; }
+    .h2-product-info { padding: 1.25rem; }
+    .h2-product-cat { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #c9a84c; margin-bottom: 0.4rem; }
+    .h2-product-name { font-family: 'Playfair Display', serif; font-size: 1rem; color: #f5f0e8; margin-bottom: 0.75rem; line-height: 1.3; }
+    .h2-product-name a { color: inherit; text-decoration: none; }
+    .h2-product-name a:hover { color: #c9a84c; }
+    .h2-product-footer { display: flex; justify-content: space-between; align-items: center; }
+    .h2-product-price { font-size: 1.1rem; font-weight: 700; color: #c9a84c; }
+    .h2-product-price-old { font-size: 0.85rem; color: rgba(245,240,232,0.4); text-decoration: line-through; margin-left: 6px; }
+    .h2-add-cart {
+      width: 36px; height: 36px; background: #c9a84c; border: none; border-radius: 50%;
+      color: #1a1a2e; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: all 0.2s;
+    }
+    .h2-add-cart:hover { background: #e0bf6a; transform: scale(1.1); }
+
+    /* Story */
+    .h2-story { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+    .h2-story-img { position: relative; overflow: hidden; }
+    .h2-story-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .h2-story-content { background: #f5f0e8; display: flex; flex-direction: column; justify-content: center; padding: clamp(3rem, 6vw, 6rem); }
+    .h2-story-content p { font-size: 1.05rem; line-height: 1.85; color: #4a4a5a; margin-bottom: 1.5rem; }
+    .h2-story-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 2rem 0; }
+    .h2-feat { display: flex; align-items: flex-start; gap: 0.875rem; }
+    .h2-feat-icon {
+      width: 42px; height: 42px; background: rgba(201,168,76,0.15); border-radius: 6px;
+      display: flex; align-items: center; justify-content: center; color: #c9a84c; font-size: 1rem; flex-shrink: 0;
+    }
+    .h2-feat-text h5 { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.2rem; }
+    .h2-feat-text p { font-size: 0.78rem; color: #888; margin: 0; }
+
+    /* Testimonials */
+    .h2-testimonials { padding: 7rem 0; background: #f5f0e8; }
+    .h2-testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3.5rem; }
+    .h2-testimonial-card {
+      background: #fff; border-radius: 6px; padding: 2.25rem; position: relative;
+      border: 1px solid rgba(26,26,46,0.08); transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .h2-testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(26,26,46,0.1); }
+    .h2-quote-icon { font-size: 3rem; color: #c9a84c; line-height: 1; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+    .h2-testimonial-text { font-size: 0.95rem; line-height: 1.75; color: #4a4a5a; margin-bottom: 1.75rem; }
+    .h2-testimonial-author { display: flex; align-items: center; gap: 0.875rem; }
+    .h2-author-avatar {
+      width: 46px; height: 46px; border-radius: 50%; background: #1a1a2e; color: #c9a84c;
+      font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .h2-author-name { font-weight: 700; color: #1a1a2e; font-size: 0.9rem; }
+    .h2-author-role { font-size: 0.75rem; color: #888; }
+    .h2-stars { color: #c9a84c; font-size: 0.78rem; margin-bottom: 0.15rem; }
+
+    /* CTA Banner */
+    .h2-cta-banner { background: #1a1a2e; padding: 6rem 0; position: relative; overflow: hidden; text-align: center; }
+    .h2-cta-banner::before {
+      content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+      width: 500px; height: 500px; border-radius: 50%; background: rgba(201,168,76,0.08); pointer-events: none;
+    }
+    .h2-cta-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; color: #f5f0e8; margin-bottom: 1.25rem; line-height: 1.15; }
+    .h2-cta-title em { color: #c9a84c; font-style: italic; }
+    .h2-cta-sub { font-size: 1.1rem; color: rgba(245,240,232,0.6); max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.7; }
+
+    /* Newsletter */
+    .h2-newsletter { background: #c9a84c; padding: 5rem 0; text-align: center; }
+    .h2-newsletter h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #1a1a2e; margin-bottom: 0.75rem; }
+    .h2-newsletter p { color: rgba(26,26,46,0.65); margin-bottom: 2rem; font-size: 1.05rem; }
+    .h2-newsletter-form {
+      display: flex; max-width: 480px; margin: 0 auto;
+      border-radius: 4px; overflow: hidden; box-shadow: 0 8px 30px rgba(26,26,46,0.2);
+    }
+    .h2-newsletter-form input { flex: 1; padding: 1rem 1.25rem; border: none; font-size: 0.95rem; background: #fff; color: #1a1a2e; outline: none; }
+    .h2-newsletter-form button {
+      padding: 1rem 1.5rem; background: #1a1a2e; color: #c9a84c; border: none;
+      font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; white-space: nowrap;
+    }
+    .h2-newsletter-form button:hover { background: #12122a; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .h2-hero { grid-template-columns: 1fr; min-height: auto; }
+      .h2-hero-right { height: 50vh; }
+      .h2-editorial-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .h2-cat-card.large { grid-row: auto; }
+      .h2-products-scroll { grid-template-columns: repeat(2, 1fr); }
+      .h2-story { grid-template-columns: 1fr; }
+      .h2-story-img { height: 400px; }
+    }
+    @media (max-width: 768px) {
+      .h2-testimonials-grid { grid-template-columns: 1fr; }
+      .h2-editorial-grid { grid-template-columns: 1fr; }
+      .h2-products-scroll { grid-template-columns: 1fr; }
+      .h2-hero-stats { gap: 1.5rem; }
+      .h2-story-features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Promo Bar -->
+  <div class="promo-bar" id="promo-bar">
+    <span>✨ New Arrivals — Spring 2024 Collection. <a href="shop.html">Explore Now</a></span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Luxe Living Home">
+        <span class="logo-icon"><i class="fas fa-couch"></i></span>
+        <span>Luxe Living</span>
+      </a>
+
+      <nav class="nav-main" id="nav-main" role="navigation" aria-label="Main navigation">
+        <!-- HOME DROPDOWN -->
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link nav-dropdown-toggle active">Home <i class="fas fa-chevron-down" style="font-size:0.7em;margin-left:4px;opacity:0.7;"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html" class="nav-dropdown-item"><i class="fas fa-layer-group"></i> Home 1 (Modern)</a>
+            <a href="index2.html" class="nav-dropdown-item" style="font-weight:600;"><i class="fas fa-paint-brush"></i> Home 2 (Creative)</a>
+          </div>
+        </div>
+
+        <!-- DASHBOARDS DROPDOWN -->
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link nav-dropdown-toggle">Dashboards <i class="fas fa-chevron-down" style="font-size:0.7em;margin-left:4px;opacity:0.7;"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="../dashboard/admin-dashboard.html" class="nav-dropdown-item"><i class="fas fa-user-shield"></i> Admin Dashboard</a>
+            <a href="../dashboard/user-dashboard.html" class="nav-dropdown-item"><i class="fas fa-user"></i> User Dashboard</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="shop.html" class="nav-link nav-dropdown-toggle">Shop</a>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html" class="nav-dropdown-item"><i class="fas fa-couch"></i> Living Room</a>
+            <a href="shop.html" class="nav-dropdown-item"><i class="fas fa-bed"></i> Bedroom</a>
+            <a href="shop.html" class="nav-dropdown-item"><i class="fas fa-utensils"></i> Dining</a>
+            <a href="shop.html" class="nav-dropdown-item"><i class="fas fa-briefcase"></i> Office</a>
+          </div>
+        </div>
+
+        <a href="shop.html" class="nav-link">Deals</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle RTL layout" aria-pressed="false" title="Switch to RTL"><i class="fas fa-globe"></i></button>
+        <a href="#" class="header-action-btn header-search-btn" aria-label="Search"><i class="fas fa-search"></i></a>
+
+        <a href="cart.html" class="header-action-btn" aria-label="Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="count cart-count" style="display:none">0</span>
+        </a>
+        <a href="login.html" class="header-action-btn" aria-label="Account"><i class="far fa-user"></i></a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <main id="main-content">
+
+    <!-- ===== HERO: SPLIT SCREEN ===== -->
+    <section class="h2-hero" aria-label="Hero banner">
+      <div class="h2-hero-left">
+        <span class="h2-hero-eyebrow">New Collection 2024</span>
+        <h1 class="h2-hero-title">Design That<br>Speaks to Your <em>Soul.</em></h1>
+        <p class="h2-hero-desc">Where every curve tells a story. Crafted for those who refuse to compromise between beauty and comfort.</p>
+        <div class="h2-hero-cta">
+          <a href="shop.html" class="h2-btn-gold"><i class="fas fa-arrow-right"></i> Explore Collection</a>
+          <a href="about.html" class="h2-btn-outline-light"><i class="fas fa-play"></i> Our Story</a>
+        </div>
+        <div class="h2-hero-stats">
+          <div class="h2-hero-stat"><h4>2,500+</h4><p>Pieces</p></div>
+          <div class="h2-hero-stat"><h4>50K+</h4><p>Homes Transformed</p></div>
+          <div class="h2-hero-stat"><h4>15+</h4><p>Years Crafting</p></div>
+        </div>
+      </div>
+      <div class="h2-hero-right">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1000&h=1200&fit=crop" alt="Luxurious modern living room interior" loading="eager" width="1000" height="1200">
+        <div class="h2-hero-right-overlay"></div>
+        <div class="h2-hero-badge">
+          <span>40%</span>
+          OFF<br>Spring Sale
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MARQUEE STRIP ===== -->
+    <div class="h2-marquee-strip" aria-hidden="true">
+      <div class="h2-marquee-inner" id="h2-marquee-inner">
+        <span class="h2-marquee-item">Free Delivery Over $500 <span class="h2-marquee-dot"></span></span>
+        <span class="h2-marquee-item">5-Year Warranty <span class="h2-marquee-dot"></span></span>
+        <span class="h2-marquee-item">Handcrafted Quality <span class="h2-marquee-dot"></span></span>
+        <span class="h2-marquee-item">30-Day Returns <span class="h2-marquee-dot"></span></span>
+        <span class="h2-marquee-item">New Spring 2024 Arrivals <span class="h2-marquee-dot"></span></span>
+        <span class="h2-marquee-item">Expert Design Consultation <span class="h2-marquee-dot"></span></span>
+        <span class="h2-marquee-item">Free Delivery Over $500 <span class="h2-marquee-dot"></span></span>
+        <span class="h2-marquee-item">5-Year Warranty <span class="h2-marquee-dot"></span></span>
+        <span class="h2-marquee-item">Handcrafted Quality <span class="h2-marquee-dot"></span></span>
+        <span class="h2-marquee-item">30-Day Returns <span class="h2-marquee-dot"></span></span>
+        <span class="h2-marquee-item">New Spring 2024 Arrivals <span class="h2-marquee-dot"></span></span>
+        <span class="h2-marquee-item">Expert Design Consultation <span class="h2-marquee-dot"></span></span>
+      </div>
+    </div>
+
+    <!-- ===== EDITORIAL CATEGORIES ===== -->
+    <section class="h2-editorial" aria-label="Shop by category">
+      <div class="container">
+        <span class="h2-section-label">Browse by Room</span>
+        <h2 class="h2-section-heading">Curated Spaces,<br>Endless Possibilities</h2>
+        <div class="h2-editorial-grid">
+          <a href="shop.html" class="h2-cat-card large">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&h=750&fit=crop" alt="Living room furniture" loading="lazy" width="700" height="750">
+            <div class="h2-cat-card-overlay">
+              <span class="h2-cat-card-tag">120+ products</span>
+              <h3>Living Room</h3>
+              <span class="h2-cat-card-link">Shop Now <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="shop.html" class="h2-cat-card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=500&h=320&fit=crop" alt="Bedroom furniture" loading="lazy" width="500" height="320">
+            <div class="h2-cat-card-overlay">
+              <span class="h2-cat-card-tag">85+ products</span>
+              <h3>Bedroom</h3>
+              <span class="h2-cat-card-link">Shop Now <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="shop.html" class="h2-cat-card">
+            <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=500&h=320&fit=crop" alt="Office furniture" loading="lazy" width="500" height="320">
+            <div class="h2-cat-card-overlay">
+              <span class="h2-cat-card-tag">48+ products</span>
+              <h3>Home Office</h3>
+              <span class="h2-cat-card-link">Shop Now <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="shop.html" class="h2-cat-card">
+            <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=500&h=320&fit=crop" alt="Dining room furniture" loading="lazy" width="500" height="320">
+            <div class="h2-cat-card-overlay">
+              <span class="h2-cat-card-tag">64+ products</span>
+              <h3>Dining Room</h3>
+              <span class="h2-cat-card-link">Shop Now <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="shop.html" class="h2-cat-card">
+            <img src="https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=500&h=320&fit=crop" alt="Outdoor furniture" loading="lazy" width="500" height="320">
+            <div class="h2-cat-card-overlay">
+              <span class="h2-cat-card-tag">32+ products</span>
+              <h3>Outdoor</h3>
+              <span class="h2-cat-card-link">Shop Now <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED PRODUCTS ===== -->
+    <section class="h2-products" id="featured-products" aria-label="Featured products">
+      <div class="container">
+        <div class="h2-products-header">
+          <div>
+            <span class="h2-section-label">Curated for You</span>
+            <h2 class="h2-section-heading" style="margin-bottom:0;">Our Bestselling<br>Masterpieces</h2>
+          </div>
+          <a href="shop.html" class="h2-btn-outline-light" style="font-size:0.82rem;padding:0.75rem 1.5rem;">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="h2-products-scroll">
+          <!-- Product 1 -->
+          <div class="h2-product-card">
+            <div class="h2-product-img">
+              <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=400&fit=crop" alt="Nordic Lounge Chair" loading="lazy" width="400" height="400">
+              <span class="h2-product-badge">New</span>
+              <div class="h2-product-actions">
+                <button class="h2-product-action-btn" title="Add to wishlist" onclick="handleWishlistToggle({id:'p1',name:'Nordic Lounge Chair',price:899,image:'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=400&fit=crop',category:'Living Room'})"><i class="far fa-heart"></i></button>
+                <button class="h2-product-action-btn" title="Quick view"><i class="far fa-eye"></i></button>
+              </div>
+            </div>
+            <div class="h2-product-info">
+              <div class="h2-product-cat">Living Room</div>
+              <h3 class="h2-product-name"><a href="product.html">Nordic Lounge Chair</a></h3>
+              <div class="h2-product-footer">
+                <span class="h2-product-price">$899</span>
+                <button class="h2-add-cart" onclick="handleAddToCart({id:'p1',name:'Nordic Lounge Chair',price:899,image:'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=400&fit=crop'})" title="Add to cart"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="h2-product-card">
+            <div class="h2-product-img">
+              <img src="https://images.unsplash.com/photo-1550254478-ead40cc54513?w=400&h=400&fit=crop" alt="Velvet Sofa Set" loading="lazy" width="400" height="400">
+              <span class="h2-product-badge">Premium</span>
+              <div class="h2-product-actions">
+                <button class="h2-product-action-btn" title="Add to wishlist" onclick="handleWishlistToggle({id:'p2',name:'Velvet Sofa Set',price:2499,image:'https://images.unsplash.com/photo-1550254478-ead40cc54513?w=400&h=400&fit=crop',category:'Living Room'})"><i class="far fa-heart"></i></button>
+                <button class="h2-product-action-btn" title="Quick view"><i class="far fa-eye"></i></button>
+              </div>
+            </div>
+            <div class="h2-product-info">
+              <div class="h2-product-cat">Living Room</div>
+              <h3 class="h2-product-name"><a href="product.html">Velvet Sofa Set</a></h3>
+              <div class="h2-product-footer">
+                <span class="h2-product-price">$2,499</span>
+                <button class="h2-add-cart" onclick="handleAddToCart({id:'p2',name:'Velvet Sofa Set',price:2499,image:'https://images.unsplash.com/photo-1550254478-ead40cc54513?w=400&h=400&fit=crop'})" title="Add to cart"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="h2-product-card">
+            <div class="h2-product-img">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=400&fit=crop" alt="King Bed Frame" loading="lazy" width="400" height="400">
+              <span class="h2-product-badge">Bestseller</span>
+              <div class="h2-product-actions">
+                <button class="h2-product-action-btn" title="Add to wishlist" onclick="handleWishlistToggle({id:'p3',name:'King Bed Frame',price:1299,image:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=400&fit=crop',category:'Bedroom'})"><i class="far fa-heart"></i></button>
+                <button class="h2-product-action-btn" title="Quick view"><i class="far fa-eye"></i></button>
+              </div>
+            </div>
+            <div class="h2-product-info">
+              <div class="h2-product-cat">Bedroom</div>
+              <h3 class="h2-product-name"><a href="product.html">King Bed Frame</a></h3>
+              <div class="h2-product-footer">
+                <span class="h2-product-price">$1,299</span>
+                <button class="h2-add-cart" onclick="handleAddToCart({id:'p3',name:'King Bed Frame',price:1299,image:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=400&fit=crop'})" title="Add to cart"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+          <!-- Product 4 -->
+          <div class="h2-product-card">
+            <div class="h2-product-img">
+              <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&h=400&fit=crop" alt="Marble Dining Table" loading="lazy" width="400" height="400">
+              <span class="h2-product-badge" style="background:#1a1a2e;color:#c9a84c;">-20%</span>
+              <div class="h2-product-actions">
+                <button class="h2-product-action-btn" title="Add to wishlist" onclick="handleWishlistToggle({id:'p4',name:'Marble Dining Table',price:1899,image:'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&h=400&fit=crop',category:'Dining'})"><i class="far fa-heart"></i></button>
+                <button class="h2-product-action-btn" title="Quick view"><i class="far fa-eye"></i></button>
+              </div>
+            </div>
+            <div class="h2-product-info">
+              <div class="h2-product-cat">Dining</div>
+              <h3 class="h2-product-name"><a href="product.html">Marble Dining Table</a></h3>
+              <div class="h2-product-footer">
+                <div><span class="h2-product-price">$1,899</span><span class="h2-product-price-old">$2,399</span></div>
+                <button class="h2-add-cart" onclick="handleAddToCart({id:'p4',name:'Marble Dining Table',price:1899,image:'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&h=400&fit=crop'})" title="Add to cart"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BRAND STORY ===== -->
+    <section class="h2-story" aria-label="Our story">
+      <div class="h2-story-img">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=700&fit=crop" alt="Artisan crafting furniture" loading="lazy" width="800" height="700">
+      </div>
+      <div class="h2-story-content">
+        <span class="h2-section-label">Our Craft</span>
+        <h2 class="h2-section-heading">Furniture as a Form of Self-Expression</h2>
+        <p>We believe your home is more than where you live — it's a canvas that reflects your story. For over 15 years, Luxe Living has been creating furniture that bridges the gap between fine art and functional design.</p>
+        <p>Every piece is meticulously crafted using sustainably sourced materials, honoring both the planet and the artisans who shape each creation by hand.</p>
+        <div class="h2-story-features">
+          <div class="h2-feat"><div class="h2-feat-icon"><i class="fas fa-leaf"></i></div><div class="h2-feat-text"><h5>Sustainable Materials</h5><p>Ethically sourced woods &amp; fabrics</p></div></div>
+          <div class="h2-feat"><div class="h2-feat-icon"><i class="fas fa-hands"></i></div><div class="h2-feat-text"><h5>Handcrafted</h5><p>By skilled artisans worldwide</p></div></div>
+          <div class="h2-feat"><div class="h2-feat-icon"><i class="fas fa-shield-alt"></i></div><div class="h2-feat-text"><h5>5-Year Warranty</h5><p>On every single piece</p></div></div>
+          <div class="h2-feat"><div class="h2-feat-icon"><i class="fas fa-truck"></i></div><div class="h2-feat-text"><h5>White Glove Delivery</h5><p>Free on orders over $500</p></div></div>
+        </div>
+        <a href="about.html" class="h2-btn-gold" style="align-self:flex-start;margin-top:0.5rem;">Discover Our Story <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="h2-testimonials" id="testimonials" aria-label="Customer testimonials">
+      <div class="container">
+        <span class="h2-section-label">Real Voices</span>
+        <h2 class="h2-section-heading" style="color:#1a1a2e;">What Our Customers<br>Are Saying</h2>
+        <div class="h2-testimonials-grid">
+          <div class="h2-testimonial-card">
+            <div class="h2-quote-icon">"</div>
+            <p class="h2-testimonial-text">The Nordic Lounge Chair has completely transformed our reading nook. The quality is extraordinary — every stitch, every seam tells a story of masterful craftsmanship.</p>
+            <div class="h2-testimonial-author">
+              <div class="h2-author-avatar">SJ</div>
+              <div>
+                <div class="h2-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="h2-author-name">Sarah Johnson</div>
+                <div class="h2-author-role">Interior Designer, NYC</div>
+              </div>
+            </div>
+          </div>
+          <div class="h2-testimonial-card">
+            <div class="h2-quote-icon">"</div>
+            <p class="h2-testimonial-text">I was skeptical about buying furniture online, but Luxe Living exceeded every expectation. The white glove delivery was seamless and the velvet sofa is absolutely stunning.</p>
+            <div class="h2-testimonial-author">
+              <div class="h2-author-avatar">MC</div>
+              <div>
+                <div class="h2-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="h2-author-name">Michael Chen</div>
+                <div class="h2-author-role">Architect, San Francisco</div>
+              </div>
+            </div>
+          </div>
+          <div class="h2-testimonial-card">
+            <div class="h2-quote-icon">"</div>
+            <p class="h2-testimonial-text">Three years, four rooms, and I keep coming back. Luxe Living doesn't just sell furniture — they help you create a home that feels like you. Unparalleled quality.</p>
+            <div class="h2-testimonial-author">
+              <div class="h2-author-avatar">ED</div>
+              <div>
+                <div class="h2-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                <div class="h2-author-name">Emily Davis</div>
+                <div class="h2-author-role">Homeowner, Chicago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="h2-cta-banner" aria-label="Call to action">
+      <div class="container" style="position:relative;z-index:1;">
+        <h2 class="h2-cta-title">Ready to Elevate<br>Your <em>Living Space?</em></h2>
+        <p class="h2-cta-sub">Spring Sale is here — save up to 40% on our most coveted pieces. Limited time, curated for you.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="shop.html" class="h2-btn-gold"><i class="fas fa-shopping-bag"></i> Shop the Sale</a>
+          <a href="contact.html" class="h2-btn-outline-light"><i class="fas fa-headset"></i> Talk to a Designer</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="h2-newsletter" aria-label="Newsletter signup">
+      <div class="container">
+        <h2>Join the Luxe Living Family</h2>
+        <p>Get exclusive offers, design inspiration, and first access to new arrivals in your inbox.</p>
+        <form class="h2-newsletter-form" id="h2-newsletter-form">
+          <input type="email" placeholder="Your email address" required aria-label="Email address">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-icon" style="background:var(--accent);color:var(--primary);"><i class="fas fa-couch"></i></span>
+            <span>Luxe Living</span>
+          </div>
+          <p>Premium furniture designed for modern living. Every piece tells a story of craftsmanship and timeless elegance.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-layer-group" style="font-size:0.75em;margin-right:5px;"></i> Home 1 (Modern)</a></li>
+            <li><a href="index2.html"><i class="fas fa-paint-brush" style="font-size:0.75em;margin-right:5px;"></i> Home 2 (Creative)</a></li>
+            <li><a href="../dashboard/admin-dashboard.html"><i class="fas fa-user-shield" style="font-size:0.75em;margin-right:5px;"></i> Admin Dashboard</a></li>
+            <li><a href="../dashboard/user-dashboard.html"><i class="fas fa-user" style="font-size:0.75em;margin-right:5px;"></i> User Dashboard</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Newsletter</h4>
+          <p style="font-size:var(--text-sm);color:rgba(232,213,183,0.7);margin-bottom:var(--space-4);">Subscribe for exclusive offers and updates.</p>
+          <form class="footer-newsletter-form">
+            <input type="email" placeholder="Your email" aria-label="Email for newsletter">
+            <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Luxe Living. All rights reserved.</p>
+        <div class="footer-payment">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-cc-stripe"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="btn btn-icon btn-accent"
+    style="position:fixed;bottom:24px;right:24px;z-index:200;opacity:0;visibility:hidden;transition:all 0.3s;"
+    aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <style>
+    #back-to-top.active { opacity: 1 !important; visibility: visible !important; }
+  </style>
+
+  <div id="toast-container" class="toast-container" role="alert" aria-live="polite"></div>
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

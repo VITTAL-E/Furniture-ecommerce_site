@@ -1,0 +1,260 @@
+/* ============================================================
+   LUXE LIVING — RTL (Right-to-Left) Stylesheet
+   Applied via [dir="rtl"] on the <html> element
+   Supports Arabic, Hebrew, Persian, and other RTL languages
+   ============================================================ */
+
+/* --- Base Direction --- */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* --- Navigation --- */
+[dir="rtl"] .nav-dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .nav-main {
+  right: auto;
+  left: -100%;
+}
+
+[dir="rtl"] .nav-main.active {
+  left: 0;
+}
+
+/* --- Footer Links Hover --- */
+[dir="rtl"] .footer-links a:hover {
+  padding-left: 0;
+  padding-right: var(--space-2);
+}
+
+/* --- Form Controls --- */
+[dir="rtl"] select.form-control {
+  background-position: left 12px center;
+  padding-right: var(--space-4);
+  padding-left: var(--space-8);
+}
+
+[dir="rtl"] .form-label .required {
+  margin-left: 0;
+  margin-right: 2px;
+}
+
+/* --- Product Card Actions --- */
+[dir="rtl"] .product-card-actions {
+  right: auto;
+  left: var(--space-3);
+  transform: translateX(-10px);
+}
+
+[dir="rtl"] .product-card:hover .product-card-actions {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .product-card-badges {
+  left: auto;
+  right: var(--space-3);
+}
+
+/* --- Breadcrumbs --- */
+[dir="rtl"] .breadcrumb-separator {
+  transform: scaleX(-1);
+}
+
+/* --- Cart Item --- */
+[dir="rtl"] .cart-table th {
+  text-align: right;
+}
+
+/* --- Toast --- */
+[dir="rtl"] .toast-container {
+  right: auto;
+  left: var(--space-5);
+}
+
+[dir="rtl"] .toast {
+  border-left: none;
+  border-right: 4px solid var(--accent);
+  animation: slideInLeft var(--duration-normal) var(--ease-spring);
+}
+
+[dir="rtl"] .toast-success { border-right-color: var(--success); }
+[dir="rtl"] .toast-error { border-right-color: var(--error); }
+[dir="rtl"] .toast-warning { border-right-color: var(--warning); }
+[dir="rtl"] .toast-info { border-right-color: var(--info); }
+
+/* --- Dashboard Sidebar --- */
+[dir="rtl"] .dashboard-sidebar {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .dashboard-main {
+  margin-left: 0;
+  margin-right: var(--sidebar-width);
+}
+
+[dir="rtl"] .dashboard-sidebar.collapsed ~ .dashboard-main {
+  margin-right: var(--sidebar-collapsed);
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  [dir="rtl"] .dashboard-sidebar {
+    transform: translateX(100%);
+  }
+
+  [dir="rtl"] .dashboard-sidebar.active {
+    transform: translateX(0);
+  }
+
+  [dir="rtl"] .dashboard-main {
+    margin-right: 0;
+  }
+}
+
+/* --- Status Dot --- */
+[dir="rtl"] .status-dot {
+  margin-right: 0;
+  margin-left: var(--space-2);
+}
+
+/* --- Sidebar Nav Badge --- */
+[dir="rtl"] .sidebar-nav-link .nav-badge {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* --- Rating Input --- */
+[dir="rtl"] .rating-input {
+  direction: ltr;
+}
+
+/* --- Rating Count --- */
+[dir="rtl"] .rating-count {
+  margin-left: 0;
+  margin-right: var(--space-2);
+}
+
+/* --- Icon Flipping --- */
+[dir="rtl"] .fa-chevron-right,
+[dir="rtl"] .fa-arrow-right,
+[dir="rtl"] .fa-angle-right,
+[dir="rtl"] .fa-chevron-left,
+[dir="rtl"] .fa-arrow-left,
+[dir="rtl"] .fa-angle-left {
+  transform: scaleX(-1);
+}
+
+/* --- Sidebar Search --- */
+[dir="rtl"] .sidebar-search button {
+  right: auto;
+  left: var(--space-3);
+}
+
+[dir="rtl"] .sidebar-search input {
+  padding-right: var(--space-4);
+  padding-left: var(--space-8);
+}
+
+/* --- Blog Card Link --- */
+[dir="rtl"] .blog-card-link:hover {
+  gap: var(--space-3);
+}
+
+/* --- Timeline --- */
+[dir="rtl"] .timeline::before {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+@media (max-width: 1024px) {
+  [dir="rtl"] .timeline::before {
+    left: auto;
+    right: 20px;
+  }
+
+  [dir="rtl"] .timeline-item:nth-child(odd),
+  [dir="rtl"] .timeline-item:nth-child(even) {
+    padding-left: 0;
+    padding-right: 50px;
+  }
+
+  [dir="rtl"] .timeline-dot {
+    left: auto;
+    right: 13px;
+  }
+}
+
+/* --- Order Timeline --- */
+[dir="rtl"] .order-timeline {
+  padding-left: 0;
+  padding-right: var(--space-8);
+}
+
+[dir="rtl"] .order-timeline::before {
+  left: auto;
+  right: 14px;
+}
+
+[dir="rtl"] .order-timeline-dot {
+  left: auto;
+  right: calc(-1 * var(--space-8) + 7px);
+}
+
+/* --- Shop Sort --- */
+[dir="rtl"] .shop-sort select {
+  background-position: left 8px center;
+  padding-right: var(--space-3);
+  padding-left: var(--space-6);
+}
+
+/* --- Checkout Step Line --- */
+[dir="rtl"] .checkout-steps {
+  direction: rtl;
+}
+
+/* --- Section Title Underline --- */
+[dir="rtl"] .section-title h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Mobile Specific RTL */
+@media (max-width: 640px) {
+  [dir="rtl"] .toast-container {
+    left: var(--space-3);
+    right: var(--space-3);
+  }
+}
+
+/* --- Dropdown Arrow --- */
+[dir="rtl"] .nav-dropdown-toggle::after {
+  margin-left: 0;
+  margin-right: var(--space-1);
+}
+
+/* --- Hero Content stays LTR-aligned in RTL for visual balance --- */
+[dir="rtl"] .hero-image {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .hero-image::before {
+  background: linear-gradient(270deg, var(--primary) 0%, transparent 50%);
+}
+
+/* --- Dashboard Search --- */
+[dir="rtl"] .dashboard-search i {
+  order: 1;
+}
+
+/* --- Skip Link --- */
+[dir="rtl"] .skip-link {
+  left: auto;
+  right: var(--space-4);
+}

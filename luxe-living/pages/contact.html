@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Luxe Living for inquiries, support, or showroom visits. Find store locations, hours, and submit your message.">
+  <title>Contact Us | Luxe Living</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪑</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css"><link rel="stylesheet" href="../assets/css/dark-mode.css"><link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-couch"></i></span><span>Luxe Living</span></a>
+      <nav class="nav-main" role="navigation"><a href="index.html" class="nav-link">Home</a><a href="shop.html" class="nav-link">Shop</a><a href="blog.html" class="nav-link">Blog</a><a href="contact.html" class="nav-link active">Contact</a></nav>
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle RTL layout" aria-pressed="false" title="Switch to RTL"><i class="fas fa-globe"></i></button>
+        <a href="cart.html" class="header-action-btn" aria-label="Cart"><i class="fas fa-shopping-bag"></i><span class="count cart-count" style="display:none">0</span></a>
+        <a href="login.html" class="header-action-btn" aria-label="Account"><i class="far fa-user"></i></a>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-overlay"></div>
+
+  <main id="main-content">
+    <section class="page-header">
+      <div class="container"><h1>Contact Us</h1>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><span class="breadcrumb-item"><a href="index.html">Home</a></span><span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span><span class="breadcrumb-item active">Contact</span></nav>
+      </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="contact-info-cards reveal">
+          <div class="contact-info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Visit Us</h4>
+            <p>456 Design Avenue<br>New York, NY 10001</p>
+          </div>
+          <div class="contact-info-card">
+            <i class="fas fa-phone-alt"></i>
+            <h4>Call Us</h4>
+            <p>+1 (555) 123-4567<br>Mon-Fri: 9am - 6pm</p>
+          </div>
+          <div class="contact-info-card">
+            <i class="fas fa-envelope"></i>
+            <h4>Email Us</h4>
+            <p>hello@luxeliving.com<br>support@luxeliving.com</p>
+          </div>
+          <div class="contact-info-card">
+            <i class="fas fa-clock"></i>
+            <h4>Business Hours</h4>
+            <p>Mon-Sat: 9am - 8pm<br>Sun: 10am - 6pm</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Contact Form -->
+          <div class="reveal-left">
+            <h2>Send Us a Message</h2>
+            <p class="text-muted mb-5">Have a question or need assistance? Fill out the form below and we'll get back to you within 24 hours.</p>
+            <!-- TODO: Integrate with Formspree or Netlify Forms -->
+            <form data-validate action="https://formspree.io/f/YOUR_ID" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">First Name <span class="required">*</span></label>
+                  <input type="text" class="form-control" name="firstName" required placeholder="John">
+                  <div class="form-error"></div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name <span class="required">*</span></label>
+                  <input type="text" class="form-control" name="lastName" required placeholder="Doe">
+                  <div class="form-error"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email <span class="required">*</span></label>
+                <input type="email" class="form-control" name="email" required placeholder="john@example.com">
+                <div class="form-error"></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone</label>
+                <input type="tel" class="form-control" name="phone" placeholder="+1 (555) 123-4567">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Subject <span class="required">*</span></label>
+                <select class="form-control" name="subject" required>
+                  <option value="">Select a topic</option>
+                  <option>General Inquiry</option>
+                  <option>Product Question</option>
+                  <option>Order Support</option>
+                  <option>Returns & Exchanges</option>
+                  <option>Wholesale</option>
+                  <option>Other</option>
+                </select>
+                <div class="form-error"></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Message <span class="required">*</span></label>
+                <textarea class="form-control" name="message" required rows="5" placeholder="How can we help you?"></textarea>
+                <div class="form-error"></div>
+              </div>
+              <button type="submit" class="btn btn-accent btn-lg"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+          </div>
+
+          <!-- Map & Store Info -->
+          <div class="reveal-right">
+            <!-- Google Maps Placeholder -->
+            <!-- TODO: Replace with your Google Maps API key -->
+            <div class="contact-map mb-6">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878428698!3d40.74076794379132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" title="Luxe Living Store Location"></iframe>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <h3>Frequently Asked Questions</h3>
+            <div class="accordion mt-4">
+              <div class="accordion-item">
+                <button class="accordion-header">What are your delivery options?<span class="accordion-icon"><i class="fas fa-chevron-down"></i></span></button>
+                <div class="accordion-body"><div class="accordion-content">We offer standard (5-7 days), express (2-3 days), and white-glove delivery service. Free shipping on all orders over $500. White-glove includes in-home setup and packaging removal.</div></div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">What is your return policy?<span class="accordion-icon"><i class="fas fa-chevron-down"></i></span></button>
+                <div class="accordion-body"><div class="accordion-content">We offer a 30-day return policy on all items in original condition. Custom and made-to-order items are final sale. Return shipping is free for defective items.</div></div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Do you offer interior design consultations?<span class="accordion-icon"><i class="fas fa-chevron-down"></i></span></button>
+                <div class="accordion-body"><div class="accordion-content">Yes! We offer complimentary 30-minute virtual consultations and in-store design appointments. Our design team can help you select pieces, plan room layouts, and create a cohesive look.</div></div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Do you offer warranty coverage?<span class="accordion-icon"><i class="fas fa-chevron-down"></i></span></button>
+                <div class="accordion-body"><div class="accordion-content">All Luxe Living furniture comes with a 5-year limited warranty covering manufacturing defects. Extended 10-year warranty plans are available for purchase at checkout.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="footer-logo"><span class="logo-icon" style="background:var(--accent);color:var(--primary);"><i class="fas fa-couch"></i></span><span>Luxe Living</span></div><p>Premium furniture designed for modern living.</p></div>
+        <div><h4 class="footer-heading">Quick Links</h4><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="shop.html">Shop</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4 class="footer-heading">Support</h4><ul class="footer-links"><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
+        <div><h4 class="footer-heading">Newsletter</h4><form class="footer-newsletter-form"><input type="email" placeholder="Your email" aria-label="Email"><button type="submit"><i class="fas fa-paper-plane"></i></button></form></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2024 Luxe Living. All rights reserved.</p></div>
+    </div>
+  </footer>
+  <div id="toast-container" class="toast-container"></div>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

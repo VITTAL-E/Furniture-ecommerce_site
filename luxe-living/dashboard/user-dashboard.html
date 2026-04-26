@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account | Luxe Living</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪑</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css"><link rel="stylesheet" href="../assets/css/dark-mode.css"><link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" role="navigation" aria-label="Account navigation">
+      <div class="dashboard-sidebar-header"><a href="../pages/index.html" class="logo"><span class="logo-icon"><i class="fas fa-couch"></i></span><span>Luxe Living</span></a></div>
+      <div style="text-align:center;padding:var(--space-6) var(--space-5);border-bottom:1px solid rgba(255,255,255,0.1);">
+        <div class="avatar avatar-xl" style="margin:0 auto var(--space-3);">JD</div>
+        <div style="font-weight:600;color:var(--secondary);" class="profile-name">John Doe</div>
+        <div style="font-size:var(--text-xs);color:rgba(232,213,183,0.5);" class="profile-email">john.doe@example.com</div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-nav-group">
+          <a href="#" class="sidebar-nav-link active" data-section="section-overview"><i class="fas fa-th-large"></i> Dashboard</a>
+          <a href="#" class="sidebar-nav-link" data-section="section-orders"><i class="fas fa-shopping-bag"></i> Order History</a>
+          <a href="#" class="sidebar-nav-link" data-section="section-wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+          <a href="#" class="sidebar-nav-link" data-section="section-profile"><i class="fas fa-user"></i> Profile</a>
+          <a href="#" class="sidebar-nav-link" data-section="section-addresses"><i class="fas fa-map-marker-alt"></i> Addresses</a>
+          <a href="#" class="sidebar-nav-link" data-section="section-settings"><i class="fas fa-cog"></i> Settings</a>
+          <a href="admin-dashboard.html" class="sidebar-nav-link"><i class="fas fa-user-shield"></i> Admin Panel</a>
+          <a href="../pages/index.html" class="sidebar-nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+        <div class="sidebar-nav-group" style="border-top:1px solid rgba(255,255,255,0.08);padding-top:0.5rem;">
+          <div class="sidebar-nav-label">Visit Site</div>
+          <a href="../pages/index.html" class="sidebar-nav-link"><i class="fas fa-layer-group"></i> Home 1 (Modern)</a>
+          <a href="../pages/index2.html" class="sidebar-nav-link"><i class="fas fa-paint-brush"></i> Home 2 (Creative)</a>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="dashboard-header-left"><button class="sidebar-toggle-btn" aria-label="Toggle sidebar"><i class="fas fa-bars"></i></button><h2 style="margin:0;font-size:var(--text-lg);">My Account</h2></div>
+        <div class="dashboard-header-right">
+          <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+          <button class="rtl-toggle" aria-label="Toggle RTL layout" aria-pressed="false" title="Switch to RTL"><i class="fas fa-globe"></i></button>
+          <a href="../pages/shop.html" class="btn btn-outline btn-sm"><i class="fas fa-shopping-bag"></i> Continue Shopping</a>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+
+        <!-- ============ SECTION: OVERVIEW ============ -->
+        <div class="dashboard-section" id="section-overview">
+          <!-- Welcome Banner -->
+          <div style="background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--text-inverse);padding:var(--space-8);border-radius:var(--radius-lg);margin-bottom:var(--space-6);">
+            <h1 style="color:var(--text-inverse);margin-bottom:var(--space-2);">Welcome back, <span style="color:var(--accent);" class="profile-name">John</span>!</h1>
+            <p style="color:rgba(255,255,255,0.7);margin:0;">Manage your orders, wishlist, and account settings from your personal dashboard.</p>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="kpi-grid mb-6">
+            <div class="kpi-card"><div><h4>Total Orders</h4><div class="kpi-value">12</div></div><div class="kpi-card-icon blue"><i class="fas fa-shopping-bag"></i></div></div>
+            <div class="kpi-card"><div><h4>Wishlist Items</h4><div class="kpi-value wishlist-count">0</div></div><div class="kpi-card-icon orange"><i class="fas fa-heart"></i></div></div>
+            <div class="kpi-card"><div><h4>Total Spent</h4><div class="kpi-value">$4,890</div></div><div class="kpi-card-icon green"><i class="fas fa-wallet"></i></div></div>
+            <div class="kpi-card"><div><h4>Reward Points</h4><div class="kpi-value">2,450</div></div><div class="kpi-card-icon purple"><i class="fas fa-star"></i></div></div>
+          </div>
+
+          <!-- Recent Orders + Quick Links -->
+          <div class="grid grid-2" style="gap:var(--space-6);">
+            <div class="dash-table-container">
+              <div class="dash-table-header"><h3>Recent Orders</h3><a href="#" class="btn btn-ghost btn-sm" data-section="section-orders" onclick="document.querySelector('[data-section=section-orders]').click()">View All</a></div>
+              <table class="dash-table">
+                <thead><tr><th>Order</th><th>Date</th><th>Total</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>#ORD-001</strong></td><td>Mar 15</td><td>$1,249</td><td><span class="badge badge-success">Delivered</span></td></tr>
+                  <tr><td><strong>#ORD-003</strong></td><td>Mar 10</td><td>$549</td><td><span class="badge badge-info">Shipped</span></td></tr>
+                  <tr><td><strong>#ORD-005</strong></td><td>Feb 28</td><td>$1,798</td><td><span class="badge badge-success">Delivered</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <div style="background:var(--surface);padding:var(--space-6);border-radius:var(--radius-lg);border:1px solid var(--border-light);">
+                <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-5);">Quick Actions</h3>
+                <div class="flex flex-col gap-3">
+                  <a href="#" onclick="document.querySelector('[data-section=section-orders]').click(); return false;" class="flex items-center gap-3 p-4" style="background:var(--bg-alt);border-radius:var(--radius-md);transition:all 0.2s;"><i class="fas fa-truck" style="color:var(--accent);width:20px;text-align:center;"></i><div><strong class="text-sm">Track Order</strong><div class="text-xs text-muted">View your recent shipments</div></div></a>
+                  <a href="#" onclick="document.querySelector('[data-section=section-wishlist]').click(); return false;" class="flex items-center gap-3 p-4" style="background:var(--bg-alt);border-radius:var(--radius-md);transition:all 0.2s;"><i class="fas fa-heart" style="color:var(--accent);width:20px;text-align:center;"></i><div><strong class="text-sm">My Wishlist</strong><div class="text-xs text-muted">View saved items</div></div></a>
+                  <a href="#" onclick="document.querySelector('[data-section=section-profile]').click(); return false;" class="flex items-center gap-3 p-4" style="background:var(--bg-alt);border-radius:var(--radius-md);transition:all 0.2s;"><i class="fas fa-user-edit" style="color:var(--accent);width:20px;text-align:center;"></i><div><strong class="text-sm">Edit Profile</strong><div class="text-xs text-muted">Update your information</div></div></a>
+                  <a href="../pages/contact.html" class="flex items-center gap-3 p-4" style="background:var(--bg-alt);border-radius:var(--radius-md);transition:all 0.2s;"><i class="fas fa-headset" style="color:var(--accent);width:20px;text-align:center;"></i><div><strong class="text-sm">Get Help</strong><div class="text-xs text-muted">Contact our support team</div></div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ SECTION: ORDER HISTORY ============ -->
+        <div class="dashboard-section" id="section-orders" style="display:none;">
+          <div class="dashboard-page-title"><h1>Order History</h1><p>View and track all your orders</p></div>
+
+          <div class="dash-table-container mb-6">
+            <table class="dash-table">
+              <thead><tr><th>Order ID</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th><th>Actions</th></tr></thead>
+              <tbody id="user-orders-tbody">
+                <!-- Rendered by UserOrders.renderTable() -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Order Tracking Example -->
+          <div style="background:var(--surface);padding:var(--space-6);border-radius:var(--radius-lg);border:1px solid var(--border-light);">
+            <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-5);">Track Order #ORD-2024-003</h3>
+            <div class="order-timeline">
+              <div class="order-timeline-item completed">
+                <div class="order-timeline-dot"></div>
+                <div class="order-timeline-content"><h4>Order Placed</h4><p>March 10, 2024 — 2:30 PM</p></div>
+              </div>
+              <div class="order-timeline-item completed">
+                <div class="order-timeline-dot"></div>
+                <div class="order-timeline-content"><h4>Payment Confirmed</h4><p>March 10, 2024 — 2:31 PM</p></div>
+              </div>
+              <div class="order-timeline-item completed">
+                <div class="order-timeline-dot"></div>
+                <div class="order-timeline-content"><h4>Processing</h4><p>March 11, 2024 — 9:00 AM</p></div>
+              </div>
+              <div class="order-timeline-item active">
+                <div class="order-timeline-dot"></div>
+                <div class="order-timeline-content"><h4>Shipped</h4><p>March 12, 2024 — 3:15 PM — Tracking: LX-28491048</p></div>
+              </div>
+              <div class="order-timeline-item">
+                <div class="order-timeline-dot"></div>
+                <div class="order-timeline-content"><h4>Delivered</h4><p>Estimated: March 15, 2024</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ SECTION: WISHLIST ============ -->
+        <div class="dashboard-section" id="section-wishlist" style="display:none;">
+          <div class="dashboard-page-title"><h1>My Wishlist</h1><p>Items you've saved for later</p></div>
+
+          <div class="empty-state" id="wishlist-empty" style="display:none;">
+            <div class="empty-state-icon"><i class="fas fa-heart"></i></div>
+            <h3>Your Wishlist is Empty</h3>
+            <p>You haven't saved any items yet. Browse our collection and click the heart icon to add items here.</p>
+            <a href="../pages/shop.html" class="btn btn-accent btn-lg"><i class="fas fa-shopping-bag"></i> Browse Products</a>
+          </div>
+          <div class="products-grid" id="wishlist-grid">
+            <!-- Rendered dynamically by UserWishlistPage.render() -->
+          </div>
+        </div>
+
+        <!-- ============ SECTION: PROFILE ============ -->
+        <div class="dashboard-section" id="section-profile" style="display:none;">
+          <div class="dashboard-page-title"><h1>Profile Settings</h1><p>Manage your personal information and preferences</p></div>
+
+          <div class="grid grid-2" style="gap:var(--space-6);align-items:start;">
+            <!-- Profile Card -->
+            <div style="background:var(--surface);padding:var(--space-6);border-radius:var(--radius-lg);border:1px solid var(--border-light);text-align:center;">
+              <div class="avatar avatar-xl" style="margin:0 auto var(--space-4);">JD</div>
+              <h3 class="profile-name" style="margin-bottom:var(--space-1);">John Doe</h3>
+              <p class="text-muted text-sm profile-email" style="margin-bottom:var(--space-4);">john.doe@example.com</p>
+              <span class="badge badge-accent mb-5">Premium Member</span>
+              <div class="flex flex-col gap-3 mt-5" style="text-align:left;">
+                <div class="flex items-center gap-3 text-sm"><i class="fas fa-map-marker-alt text-accent" style="width:20px;text-align:center;"></i> New York, NY 10001</div>
+                <div class="flex items-center gap-3 text-sm"><i class="fas fa-phone text-accent" style="width:20px;text-align:center;"></i> +1 (555) 123-4567</div>
+                <div class="flex items-center gap-3 text-sm"><i class="fas fa-calendar text-accent" style="width:20px;text-align:center;"></i> Member since Jan 2024</div>
+              </div>
+            </div>
+
+            <!-- Edit Profile Form -->
+            <div style="background:var(--surface);padding:var(--space-6);border-radius:var(--radius-lg);border:1px solid var(--border-light);">
+              <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-5);">Edit Profile</h3>
+              <form id="profile-form" data-validate>
+                <div class="form-row">
+                  <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-control" id="profile-firstName" name="firstName" value="John"></div>
+                  <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-control" id="profile-lastName" name="lastName" value="Doe"></div>
+                </div>
+                <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-control" id="profile-email" name="email" value="john.doe@example.com"></div>
+                <div class="form-group"><label class="form-label">Phone</label><input type="tel" class="form-control" id="profile-phone" name="phone" value="+1 (555) 123-4567"></div>
+                <button type="submit" class="btn btn-accent"><i class="fas fa-save"></i> Save Changes</button>
+              </form>
+
+              <!-- Change Password -->
+              <div style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--border-light);">
+                <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-5);">Change Password</h3>
+                <form data-validate>
+                  <div class="form-group"><label class="form-label">Current Password</label><input type="password" class="form-control" required placeholder="Enter current password"><div class="form-error"></div></div>
+                  <div class="form-group"><label class="form-label">New Password</label><input type="password" class="form-control" required minlength="8" placeholder="Enter new password"><div class="form-error"></div></div>
+                  <div class="form-group"><label class="form-label">Confirm New Password</label><input type="password" class="form-control" required placeholder="Confirm new password"><div class="form-error"></div></div>
+                  <button type="submit" class="btn btn-outline" onclick="event.preventDefault(); Toast.show('Password updated successfully!','success')"><i class="fas fa-lock"></i> Update Password</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ SECTION: ADDRESSES ============ -->
+        <div class="dashboard-section" id="section-addresses" style="display:none;">
+          <div class="dashboard-page-title"><h1>Saved Addresses</h1><p>Manage your shipping and billing addresses</p></div>
+
+          <div class="grid grid-2" style="gap:var(--space-6);">
+            <!-- Default Shipping -->
+            <div style="background:var(--surface);padding:var(--space-6);border-radius:var(--radius-lg);border:2px solid var(--accent);position:relative;">
+              <span class="badge badge-accent" style="position:absolute;top:var(--space-4);right:var(--space-4);">Default</span>
+              <h4 style="margin-bottom:var(--space-3);"><i class="fas fa-home" style="color:var(--accent);margin-right:var(--space-2);"></i> Shipping Address</h4>
+              <p class="text-sm" style="line-height:var(--leading-relaxed);color:var(--text-muted);">
+                John Doe<br>123 Furniture Ave<br>New York, NY 10001<br>United States<br>+1 (555) 123-4567
+              </p>
+              <div class="flex gap-2 mt-4">
+                <button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i> Edit</button>
+                <button class="btn btn-ghost btn-sm"><i class="fas fa-trash"></i> Remove</button>
+              </div>
+            </div>
+            <!-- Billing -->
+            <div style="background:var(--surface);padding:var(--space-6);border-radius:var(--radius-lg);border:1px solid var(--border-light);">
+              <h4 style="margin-bottom:var(--space-3);"><i class="fas fa-building" style="color:var(--accent);margin-right:var(--space-2);"></i> Billing Address</h4>
+              <p class="text-sm" style="line-height:var(--leading-relaxed);color:var(--text-muted);">
+                John Doe<br>456 Business Blvd, Suite 200<br>New York, NY 10002<br>United States
+              </p>
+              <div class="flex gap-2 mt-4">
+                <button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i> Edit</button>
+                <button class="btn btn-ghost btn-sm"><i class="fas fa-trash"></i> Remove</button>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-accent mt-6" onclick="Toast.show('Address form coming soon!','info')"><i class="fas fa-plus"></i> Add New Address</button>
+        </div>
+
+        <!-- ============ SECTION: SETTINGS ============ -->
+        <div class="dashboard-section" id="section-settings" style="display:none;">
+          <div class="dashboard-page-title"><h1>Account Settings</h1><p>Manage your account preferences</p></div>
+
+          <div style="max-width:700px;">
+            <!-- Notification Preferences -->
+            <div style="background:var(--surface);padding:var(--space-6);border-radius:var(--radius-lg);border:1px solid var(--border-light);margin-bottom:var(--space-6);">
+              <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-5);"><i class="fas fa-bell" style="color:var(--accent);margin-right:var(--space-2);"></i> Notification Preferences</h3>
+              <div class="form-check mb-4"><input type="checkbox" id="notif-order" checked><label for="notif-order" class="form-check-label">Order updates (confirmation, shipping, delivery)</label></div>
+              <div class="form-check mb-4"><input type="checkbox" id="notif-promo" checked><label for="notif-promo" class="form-check-label">Promotional offers & discounts</label></div>
+              <div class="form-check mb-4"><input type="checkbox" id="notif-newsletter" checked><label for="notif-newsletter" class="form-check-label">Newsletter & blog updates</label></div>
+              <div class="form-check mb-4"><input type="checkbox" id="notif-restock"><label for="notif-restock" class="form-check-label">Wishlist restock alerts</label></div>
+              <div class="form-check mb-4"><input type="checkbox" id="notif-review"><label for="notif-review" class="form-check-label">Review reminders</label></div>
+              <button class="btn btn-accent" onclick="Toast.show('Notification preferences saved!','success')"><i class="fas fa-save"></i> Save Preferences</button>
+            </div>
+
+            <!-- Privacy Settings -->
+            <div style="background:var(--surface);padding:var(--space-6);border-radius:var(--radius-lg);border:1px solid var(--border-light);margin-bottom:var(--space-6);">
+              <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-5);"><i class="fas fa-shield-alt" style="color:var(--accent);margin-right:var(--space-2);"></i> Privacy & Security</h3>
+              <div class="form-check mb-4"><input type="checkbox" id="privacy-2fa"><label for="privacy-2fa" class="form-check-label">Enable two-factor authentication</label></div>
+              <div class="form-check mb-4"><input type="checkbox" id="privacy-visible" checked><label for="privacy-visible" class="form-check-label">Show my profile to other users</label></div>
+              <div class="form-check mb-4"><input type="checkbox" id="privacy-analytics" checked><label for="privacy-analytics" class="form-check-label">Allow analytics cookies</label></div>
+              <button class="btn btn-accent" onclick="Toast.show('Privacy settings saved!','success')"><i class="fas fa-save"></i> Save Settings</button>
+            </div>
+
+            <!-- Danger Zone -->
+            <div style="background:var(--surface);padding:var(--space-6);border-radius:var(--radius-lg);border:1px solid #ff4444;">
+              <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-3);color:#ff4444;"><i class="fas fa-exclamation-triangle" style="margin-right:var(--space-2);"></i> Danger Zone</h3>
+              <p class="text-sm text-muted mb-4">Once you delete your account, there is no going back. Please be certain.</p>
+              <button class="btn btn-sm" style="background:#ff4444;color:white;" onclick="Toast.show('Account deletion is disabled in templates.','warning')"><i class="fas fa-trash"></i> Delete Account</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div id="toast-container" class="toast-container"></div>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

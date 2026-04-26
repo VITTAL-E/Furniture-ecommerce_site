@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Something exciting is coming! Subscribe to be the first to know when Luxe Living launches new collections.">
+  <title>Coming Soon | Luxe Living</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪑</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css"><link rel="stylesheet" href="../assets/css/dark-mode.css"><link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <div class="coming-soon-page">
+    <!-- Background decorative shapes -->
+    <div class="hero-shape hero-shape-1" style="opacity:0.03;"></div>
+    <div class="hero-shape hero-shape-2" style="opacity:0.03;"></div>
+
+    <div class="coming-soon-content">
+      <a href="index.html" class="logo" style="justify-content:center;margin-bottom:var(--space-8);color:var(--secondary);">
+        <span class="logo-icon"><i class="fas fa-couch"></i></span>
+        <span>Luxe Living</span>
+      </a>
+
+      <h1>Something Beautiful<br>is Coming</h1>
+      <p>We're crafting something extraordinary. Our new collection combines premium materials with innovative design. Be the first to experience it.</p>
+
+      <!-- Countdown Timer -->
+      <div class="countdown">
+        <div class="countdown-item">
+          <div class="countdown-value" id="countdown-days">30</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="countdown-hours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="countdown-minutes">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="countdown-seconds">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+
+      <!-- Email Signup -->
+      <p style="color:rgba(255,255,255,0.6);font-size:var(--text-sm);margin-bottom:var(--space-3);">Get notified when we launch:</p>
+      <form class="coming-soon-form">
+        <input type="email" placeholder="Enter your email" required aria-label="Email address">
+        <button type="submit" class="btn btn-accent">Notify Me</button>
+      </form>
+
+      <!-- Social Links -->
+      <div class="coming-soon-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+
+      <div class="mt-8">
+        <a href="index.html" style="color:var(--accent);font-size:var(--text-sm);">
+          <i class="fas fa-arrow-left"></i> Back to Website
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

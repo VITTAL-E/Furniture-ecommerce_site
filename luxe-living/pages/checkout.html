@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete your purchase securely. Multiple payment options including credit card, PayPal, and Stripe.">
+  <title>Checkout | Luxe Living</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪑</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css"><link rel="stylesheet" href="../assets/css/dark-mode.css"><link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-couch"></i></span><span>Luxe Living</span></a>
+      <nav class="nav-main" role="navigation"><a href="index.html" class="nav-link">Home</a><a href="shop.html" class="nav-link">Shop</a><a href="cart.html" class="nav-link">Cart</a></nav>
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle RTL layout" aria-pressed="false" title="Switch to RTL"><i class="fas fa-globe"></i></button>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-overlay"></div>
+
+  <main id="main-content">
+    <section class="page-header">
+      <div class="container"><h1>Checkout</h1></div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Checkout Steps -->
+        <div class="checkout-steps">
+          <div class="checkout-step active"><span class="checkout-step-num">1</span> Shipping</div>
+          <div class="checkout-step-line"></div>
+          <div class="checkout-step"><span class="checkout-step-num">2</span> Payment</div>
+          <div class="checkout-step-line"></div>
+          <div class="checkout-step"><span class="checkout-step-num">3</span> Review</div>
+        </div>
+
+        <div class="cart-layout">
+          <div>
+            <!-- Step 1: Shipping -->
+            <div class="checkout-step-content" id="checkout-step-1">
+              <div style="background:var(--surface);padding:var(--space-6);border-radius:var(--radius-lg);border:1px solid var(--border-light);">
+                <h3>Shipping Information</h3>
+                <form data-validate id="shipping-form">
+                  <div class="form-row">
+                    <div class="form-group"><label class="form-label">First Name <span class="required">*</span></label><input type="text" class="form-control" required placeholder="John"><div class="form-error"></div></div>
+                    <div class="form-group"><label class="form-label">Last Name <span class="required">*</span></label><input type="text" class="form-control" required placeholder="Doe"><div class="form-error"></div></div>
+                  </div>
+                  <div class="form-group"><label class="form-label">Email <span class="required">*</span></label><input type="email" class="form-control" required placeholder="john@example.com"><div class="form-error"></div></div>
+                  <div class="form-group"><label class="form-label">Phone <span class="required">*</span></label><input type="tel" class="form-control" required placeholder="+1 (555) 123-4567"><div class="form-error"></div></div>
+                  <div class="form-group"><label class="form-label">Street Address <span class="required">*</span></label><input type="text" class="form-control" required placeholder="123 Main Street"><div class="form-error"></div></div>
+                  <div class="form-row">
+                    <div class="form-group"><label class="form-label">City <span class="required">*</span></label><input type="text" class="form-control" required placeholder="New York"><div class="form-error"></div></div>
+                    <div class="form-group"><label class="form-label">State <span class="required">*</span></label><input type="text" class="form-control" required placeholder="NY"><div class="form-error"></div></div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group"><label class="form-label">ZIP Code <span class="required">*</span></label><input type="text" class="form-control" required placeholder="10001"><div class="form-error"></div></div>
+                    <div class="form-group"><label class="form-label">Country</label>
+                      <select class="form-control"><option>United States</option><option>Canada</option><option>United Kingdom</option><option>Australia</option></select>
+                    </div>
+                  </div>
+                  <div class="form-check"><input type="checkbox" id="save-address"><label for="save-address" class="form-check-label">Save this address for future orders</label></div>
+                </form>
+              </div>
+              <div class="flex justify-between mt-5">
+                <a href="cart.html" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to Cart</a>
+                <button class="btn btn-accent btn-lg" data-checkout-next>Continue to Payment <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+
+            <!-- Step 2: Payment -->
+            <div class="checkout-step-content" id="checkout-step-2" style="display:none;">
+              <div style="background:var(--surface);padding:var(--space-6);border-radius:var(--radius-lg);border:1px solid var(--border-light);">
+                <h3>Payment Method</h3>
+                <div class="payment-methods">
+                  <div class="payment-method active">
+                    <input type="radio" name="payment" value="card" checked style="display:none">
+                    <div class="payment-method-icon"><i class="far fa-credit-card"></i></div>
+                    <div class="payment-method-info"><h4>Credit / Debit Card</h4><p>Visa, Mastercard, American Express</p></div>
+                  </div>
+                  <div class="payment-method">
+                    <input type="radio" name="payment" value="paypal" style="display:none">
+                    <div class="payment-method-icon"><i class="fab fa-paypal"></i></div>
+                    <div class="payment-method-info"><h4>PayPal</h4><p>Pay with your PayPal account</p></div>
+                  </div>
+                  <div class="payment-method">
+                    <input type="radio" name="payment" value="stripe" style="display:none">
+                    <div class="payment-method-icon"><i class="fab fa-stripe-s"></i></div>
+                    <div class="payment-method-info"><h4>Stripe</h4><p>Secure payment via Stripe</p></div>
+                  </div>
+                </div>
+
+                <!-- Credit Card Form Placeholder -->
+                <div class="mt-6" id="card-form">
+                  <div class="form-group"><label class="form-label">Card Number</label><input type="text" class="form-control" placeholder="1234 5678 9012 3456"></div>
+                  <div class="form-row">
+                    <div class="form-group"><label class="form-label">Expiry Date</label><input type="text" class="form-control" placeholder="MM/YY"></div>
+                    <div class="form-group"><label class="form-label">CVV</label><input type="text" class="form-control" placeholder="123"></div>
+                  </div>
+                  <div class="form-group"><label class="form-label">Name on Card</label><input type="text" class="form-control" placeholder="John Doe"></div>
+                </div>
+                <!-- TODO: Integrate Stripe.js or PayPal SDK here -->
+              </div>
+              <div class="flex justify-between mt-5">
+                <button class="btn btn-ghost" data-checkout-prev><i class="fas fa-arrow-left"></i> Back</button>
+                <button class="btn btn-accent btn-lg" data-checkout-next>Review Order <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+
+            <!-- Step 3: Review -->
+            <div class="checkout-step-content" id="checkout-step-3" style="display:none;">
+              <div style="background:var(--surface);padding:var(--space-6);border-radius:var(--radius-lg);border:1px solid var(--border-light);">
+                <h3>Review Your Order</h3>
+                <p class="text-muted mb-5">Please review your order details before placing your order.</p>
+                <div style="background:var(--bg-alt);padding:var(--space-4);border-radius:var(--radius-md);margin-bottom:var(--space-4);">
+                  <h4 style="font-size:var(--text-sm);margin-bottom:var(--space-2);">Shipping Address</h4>
+                  <p class="text-sm text-muted" style="margin:0;">John Doe, 123 Main Street, New York, NY 10001</p>
+                </div>
+                <div style="background:var(--bg-alt);padding:var(--space-4);border-radius:var(--radius-md);margin-bottom:var(--space-4);">
+                  <h4 style="font-size:var(--text-sm);margin-bottom:var(--space-2);">Payment Method</h4>
+                  <p class="text-sm text-muted" style="margin:0;"><i class="far fa-credit-card"></i> Credit Card ending in 3456</p>
+                </div>
+                <div class="form-check mb-4">
+                  <input type="checkbox" id="terms" required>
+                  <label for="terms" class="form-check-label">I agree to the <a href="#" style="color:var(--accent);text-decoration:underline;">Terms & Conditions</a> and <a href="#" style="color:var(--accent);text-decoration:underline;">Privacy Policy</a></label>
+                </div>
+              </div>
+              <div class="flex justify-between mt-5">
+                <button class="btn btn-ghost" data-checkout-prev><i class="fas fa-arrow-left"></i> Back</button>
+                <button class="btn btn-accent btn-lg" onclick="Toast.show('Order placed successfully! 🎉','success',5000);">
+                  <i class="fas fa-lock"></i> Place Order
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div class="order-row"><span>Subtotal</span><span id="summary-subtotal">$0.00</span></div>
+            <div class="order-row"><span>Shipping</span><span id="summary-shipping">FREE</span></div>
+            <div class="order-row"><span>Tax (8%)</span><span id="summary-tax">$0.00</span></div>
+            <div class="order-total"><span>Total</span><span id="summary-total">$0.00</span></div>
+            <p class="text-xs text-muted mt-3"><i class="fas fa-shield-alt"></i> Your payment is secured with 256-bit SSL encryption</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo"><div class="container"><div class="footer-bottom"><p>&copy; 2024 Luxe Living. All rights reserved.</p></div></div></footer>
+  <div id="toast-container" class="toast-container"></div>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
